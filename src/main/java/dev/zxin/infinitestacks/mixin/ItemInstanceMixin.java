@@ -23,7 +23,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
  * 保证只对真正的物品堆叠生效。</p>
  */
 @Mixin(ItemInstance.class)
-public abstract class ItemInstanceMixin {
+public interface ItemInstanceMixin {
 
     @Inject(method = "getMaxStackSize", at = @At("RETURN"), cancellable = true, require = 0)
     private void infinitestacks$overrideMaxStackSize(CallbackInfoReturnable<Integer> cir) {
