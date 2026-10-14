@@ -1,0 +1,13 @@
+{
+  "infinitestacks.command.get": "Global stack limit: %s",
+  "infinitestacks.command.set": "Global stack limit set to %s (saved to overrides JSON)",
+  "infinitestacks.command.item": "Override for %s set to %s",
+  "infinitestacks.command.tag": "Override for tag %s set to %s",
+  "infinitestacks.command.reset": "Overrides for %s reset",
+  "infinitestacks.command.reload": "Configuration reloaded",
+  "infinitestacks.command.synced": "Configuration pushed to all online clients",
+  "infinitestacks.command.denied": "You do not have permission to use /stack",
+  "infinitestacks.key.request_config": "Request Infinite Stacks config",
+  "infinitestacks.msg.overflow_warning": "Warning: this stack is close to the int limit and will be clamped",
+  "infinitestacks.msg.nonvanilla_crafting": "Tip: some modded crafting tables reset stacks above 64. Use the vanilla crafting table instead."
+}
