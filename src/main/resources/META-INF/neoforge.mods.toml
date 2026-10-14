@@ -1,0 +1,39 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+issueTrackerURL="https://github.com/Zxin-Pro/infinite-stacks/issues"
+
+[[mods]]
+modId="infinitestacks"
+version="1.0.0"
+displayName="Infinite Stacks"
+authors="Zxin-Pro"
+logoFile="icon.png"
+description='''
+无限堆叠 · Infinite Stacks
+把原版 64 的堆叠上限抬到接近无限，工具/盔甲等耐久物品不受影响。
+· /stack set|get|item|tag|reset|reload|diag —— 指令动态调整，服务端权威
+· config/infinitestacks.json + infinitestacks.overrides.json 配置驱动
+· 掉落物数量巨大时只渲染少量模型，其余用数字标签（K/M/B 缩写）代替
+不添加任何新物品，纯堆叠逻辑修改 + 配置驱动 + 客户端渲染优化。
+'''
+
+[[mixins]]
+config="infinitestacks.mixins.json"
+
+[[mixins]]
+config="infinitestacks.client.mixins.json"
+
+[[dependencies.infinitestacks]]
+modId="neoforge"
+type="required"
+versionRange="[1,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.infinitestacks]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.11,1.22)"
+ordering="NONE"
+side="BOTH"
