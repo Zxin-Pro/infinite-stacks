@@ -1,0 +1,47 @@
+plugins {
+    id 'java-library'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = "${mod_id}-forge-${minecraft_version}"
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+minecraft {
+    mappings channel: 'official', version: minecraft_version
+}
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+
+    // ⚠️ 这里**不要**手动添加 org.spongepowered:mixin 的 annotationProcessor。
+    // ForgeGradle 6 自带 Mixin 支持，会自动把注解处理器连同映射一起配置好并生成 refmap。
+    // 手动再加一个「没有映射配置」的 AP，会导致编译直接失败：
+    //   Unable to locate obfuscation mapping for @Inject target ...
+    // 曾经踩过这个坑，特此注明。
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 17
+}
+
+jar {
+    manifest {
+        attributes([
+                'Specification-Title'     : mod_id,
+                'Specification-Vendor'    : 'Zxin-Pro',
+                'Specification-Version'   : '1',
+                'Implementation-Title'    : project.name,
+                'Implementation-Version'  : project.version,
+                'Implementation-Vendor'   : 'Zxin-Pro',
+                // Forge 通过 manifest 读取 mixin 配置（NeoForge 用 neoforge.mods.toml 的 [[mixins]]）
+                'MixinConfigs'            : 'infinitestacks.mixins.json,infinitestacks.client.mixins.json'
+        ])
+    }
+}
