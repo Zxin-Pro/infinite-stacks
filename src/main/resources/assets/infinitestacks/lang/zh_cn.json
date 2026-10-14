@@ -1,0 +1,13 @@
+{
+  "infinitestacks.command.get": "当前全局堆叠上限：%s",
+  "infinitestacks.command.set": "全局堆叠上限已设为 %s（已写入覆盖配置）",
+  "infinitestacks.command.item": "%s 的堆叠上限已设为 %s",
+  "infinitestacks.command.tag": "标签 %s 的堆叠上限已设为 %s",
+  "infinitestacks.command.reset": "已重置 %s 的覆盖",
+  "infinitestacks.command.reload": "配置已重新加载",
+  "infinitestacks.command.synced": "配置已推送给所有在线客户端",
+  "infinitestacks.command.denied": "你没有权限使用 /stack",
+  "infinitestacks.key.request_config": "请求无限堆叠配置",
+  "infinitestacks.msg.overflow_warning": "警告：该堆叠已接近 int 上限，将被钳制",
+  "infinitestacks.msg.nonvanilla_crafting": "提示：部分模组工作台会把超过 64 的堆叠重置，请改用原版工作台合成。"
+}
