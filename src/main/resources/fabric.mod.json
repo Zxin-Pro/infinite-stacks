@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "infinitestacks",
+  "version": "1.0.0",
+  "name": "Infinite Stacks",
+  "description": "把原版 64 的堆叠上限抬到接近无限（默认 int 最大值），工具/盔甲等耐久物品不受影响；掉落物数量巨大时只渲染少量模型，其余用数字标签（K/M/B 缩写）代替。不添加任何新物品。",
+  "authors": [
+    "Zxin-Pro"
+  ],
+  "contact": {
+    "homepage": "https://github.com/Zxin-Pro/infinite-stacks",
+    "sources": "https://github.com/Zxin-Pro/infinite-stacks",
+    "issues": "https://github.com/Zxin-Pro/infinite-stacks/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/infinitestacks/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.zxin.infinitestacks.fabric.InfiniteStacksFabric"
+    ],
+    "client": [
+      "dev.zxin.infinitestacks.fabric.InfiniteStacksFabricClient"
+    ]
+  },
+  "mixins": [
+    "infinitestacks.mixins.json",
+    {
+      "config": "infinitestacks.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "fabric-api": "*",
+    "minecraft": "[1.21.1,1.22)",
+    "java": ">=21"
+  }
+}
